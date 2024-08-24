@@ -1,0 +1,20 @@
+{
+  "name": "sticky_note",
+  "version": "1.0.0",
+  "description": "simple stick note for windows",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "aysunghar",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "node-persist": "^4.0.1",
+    "@electron/packager": "^18.3.2",
+    "electron": "^30.0.0"
+  },
+  "dependencies": {
+    "electron": "^30.0.0",
+    "@electron/packager": "^18.3.2",
+    "node-persist": "^4.0.1"
+  }
+}

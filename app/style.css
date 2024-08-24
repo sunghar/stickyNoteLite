@@ -1,0 +1,140 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3); /* 黑色半透明背景 */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#title-bar {
+    -webkit-app-region: drag;
+    height: 20px; /* 根据需要调整高度 */
+    background-color: rgba(0, 0, 0, 0.7); /* 设置背景颜色 */
+    cursor: move; /* 当鼠标悬停时显示移动光标 */
+}
+
+.input-box {
+    flex: 1; /* 纵向占满除按钮外的空间 */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    height: 95%;
+    width: 100%; /* 横向占满 */
+    background: transparent; /* 设置为透明背景 */
+    color: white; /* 文字颜色为白色 */
+    overflow-y: auto;
+    white-space: pre-wrap; /* 允许自动换行和保留空格 */
+    line-height: 1.5; /* 设置行高为字体大小的1.5倍 */
+    outline: none;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer; /* 鼠标悬停时改变光标样式 */
+}
+
+.hidden-button {
+    display: none;
+    height: 20px;
+    width: 20px;
+    flex: 1; /* 每个按钮等宽 */
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+.items:hover .hidden-button {
+    display: inline-block; /* 当hover-div被悬停时显示按钮 */
+}
+
+.item_content {
+    min-height: 16px;
+}
+
+.buttonList {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-box {
+    display: flex;
+    margin-top: 10px;
+    max-height: 0; /* 初始时div不可见 */
+    transition: max-height 0.3s ease-out; /* 平滑的显示过渡效果 */
+    overflow: hidden;
+}
+
+.container:hover .button-box {
+    max-height: 1000px; /* 设置一个足够大的值来确保内容可见 */
+}
+
+
+.button {
+    height: 20px;
+    width: 20px;
+    flex: 1; /* 每个按钮等宽 */
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex; /* 启用Flexbox */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+	.button:hover {
+		background-color: #ddd;
+	}
+
+#overlayDiv {
+    position: fixed; /* 或者使用 absolute/relative 根据你的需求 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中显示 */
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px; /* 内边距 */
+    z-index: 9999; /* 确保显示在其他元素之上 */
+}
+
+#overlayOpacity {
+    position: fixed; /* 或者使用 absolute/relative 根据你的需求 */
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中显示 */
+    background-color: rgba(0, 0, 0, 0);
+    padding: 5px; /* 内边距 */
+    z-index: 9999; /* 确保显示在其他元素之上 */
+}
+
+.hidden {
+    display: none !important; /* 确保隐藏 */
+}

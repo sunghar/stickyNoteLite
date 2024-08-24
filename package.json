@@ -1,0 +1,35 @@
+{
+  "name": "sticky_note",
+  "version": "1.0.0",
+  "description": "Description of your Electron application",
+  "main": "main.js",
+  "scripts": {
+    "package": "electron-packager ./app stickyNote --win --arch=x64 --app-version=1.0.0 --asar --out ./outputs --electron-zip-dir=./electron-zip --prune=false --icon=./app/src/icon.ico --overwrite && call copyNodePersist.bat",
+    "start": "electron ./app"
+  },
+  "author": "Aysunghar Sabaget",
+  "license": "Apache-2.0",
+  "devDependencies": {
+  },
+  "build": {
+    "appId": "com.example.stickynote",
+    "productName": "stickyNote",
+    "win": {
+      "icon": "./app/src/icon.ico",
+      "overlayIcon": "./app/src/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "node-persist": "^4.0.1",
+    "@electron/packager": "^18.3.2",
+    "electron": "30.0.6"
+  }
+}
